@@ -1,0 +1,77 @@
+<style>
+#str{
+background-color: green;
+color:whitesmoke;
+border-radius: 20%;
+height:35px;
+width: 55px;
+}
+#stp{
+   color: whitesmoke;
+    background-color: red;
+    border-radius: 20%;
+    height:35px;
+width: 55px;
+
+}
+#re
+    {
+background-color: green;
+color:whitesmoke;
+border-radius: 20%;
+height:35px;
+width: 55px;
+
+
+}
+
+</style>
+<body>
+    <img src="cc.jpg" id="myimg" height="200" width=200 style="margin-bottom: 20px;">
+    <input type="button" value="Frward" id="str" onclick="fwd()" style="margin-top: 100px;">
+    <input type="button" value="stop" id="stp" onclick="stp()" style="margin-top: 100px;">
+    <input type="button" value="reverse" id="re" onclick="rev()" style="margin-top: 100px;">
+    
+</body>
+<script>
+    var imgObj;
+    var te;
+	
+    function init() {
+
+        imgObj = document.getElementById('myimg');
+        imgObj.style.position = 'relative';
+        imgObj.style.left = '0px';
+    }
+	
+    function fwd() {
+	var C=imgObj.style.left;
+	  if(te)
+	  clearTimeout(te);
+	  
+	  
+        te = setTimeout(fwd, 100);
+       
+        imgObj.style.left = parseInt(imgObj.style.left) + 10+'px';
+		if( C== 830+'px'){
+    clearTimeout(te);
+    }}
+        
+        function rev(){
+		if(te){
+		clearTimeout(te)}
+		
+            te = setTimeout(rev, 100);
+            imgObj.style.left = parseInt(imgObj.style.left) - 10+'px';
+			
+            
+
+        }
+    function stp() {
+        clearTimeout(te);
+        imgObj.style.left = '0px';
+
+    }
+    window.onload = init();
+
+</script>
